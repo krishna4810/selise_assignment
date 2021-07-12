@@ -42,7 +42,7 @@ function App(props) {
                 <Transactiondetails />
               </Route>
             </Switch>
-        </div> : <Signin />}  
+        </div> : <Signup />}  
              
       </BrowserRouter>
     );

@@ -15,7 +15,7 @@ class Transactiondetails extends Component {
         <Topbar />
         <div className="incomeStatus">
         <h3 className="detailsTitle">Transaction Details</h3>
-        <table>
+        <table> 
         <thead>
         <tr>
             <th>Date</th>
