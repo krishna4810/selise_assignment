@@ -22,13 +22,10 @@ import './signup.css'
     render() {
         const {authError} = this.props;
         return (
+            
             <div className="signup">
                 <div className="signupWrapper">
-                        <center>
-                            <h2 className="signupSubtitle">
-                                Manage Personal Finances
-                            </h2>
-                        </center>
+                       
                         <h3 className="signupTitle">
                             Sign Up
                         </h3>
@@ -50,7 +47,6 @@ import './signup.css'
                             <input type="password" id="password" className="signUpInput" onChange={this.handleChange}/>
                         </div>
                         <button className="buttonSign" type="submit">Sign Up</button>
-                        <p className="already">Already have an account? <Link className="signUpSpan" to=""><span>Sign In</span></Link></p>
                     </form>
                     <p className="warningText">{authError ? (authError):(null)}</p>
 

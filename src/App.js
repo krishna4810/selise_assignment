@@ -9,26 +9,24 @@ import CreateExpenditure from './components/create_expenditure/Expenditure';
 import Incomedetails from './components/details_income/Incomedetails'
 import Expendituredetails from './components/details_expenditure/Expendituredetails'
 import Transactiondetails from './components/transaction_details/Transactiondetails'
-import Signup from './components/auth/signup/Signup'
-import Signin from './components/auth/signin/Signin'
+import Auth from './components/auth/Auth'
 
 function App(props) {
     const {auth} = props;
     // console.log(auth);
     return (
-  
+      
       <BrowserRouter> 
       
       {auth.uid ? 
         <div className="container">
           <Sidebar />
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/" >
                 <Home />
               </Route>  
-              <Route path="/income">
-                <CreateIncome />
-              </Route>           
+              <Route path="/income" component={CreateIncome} />
+                          
               <Route path="/expenditure">
                 <CreateExpenditure />
               </Route>          
@@ -42,7 +40,7 @@ function App(props) {
                 <Transactiondetails />
               </Route>
             </Switch>
-        </div> : <Signup />}  
+        </div> : <Auth /> }  
              
       </BrowserRouter>
     );

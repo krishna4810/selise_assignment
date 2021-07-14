@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import './signin.css'
 import {connect} from 'react-redux'
 import {signIn} from '../../../store/actions/authActions'
+import Signup from '../signup/Signup'
  class Signin extends Component {
     state={
         email:'',
@@ -20,31 +21,25 @@ import {signIn} from '../../../store/actions/authActions'
     render() {
         const {authError}=this.props;
         return (
-            <div className="signin">
-                <div className="signinWrapper">
-                        <center>
-                            <h2 className="signinSubtitle">
-                                Manage Personal Finances
-                            </h2>
-                        </center>
-                        <h3 className="signinTitle">
-                            Sign In
-                        </h3>
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="input-field">
-                            <label className="labelUp">Email:</label>
-                            <input type="text" id="email" className="signinInput" onChange={this.handleChange}/>
-                        </div>
-                        <div className="input-field">
-                            <label className="labelUp">Password:</label>
-                            <input type="password" id="password" className="signinInput" onChange={this.handleChange}/>
-                        </div>
-                        <button className="buttonSign" type="submit">Sign In</button>
-                        <p className="already">No account yet? <Link className="signUpSpan" to="signup"><span>Sign Up</span></Link></p>
-                    </form>
-                    <p className="warningText">{authError ? (authError):(null)}</p>
-                </div>
-            </div>
+                <div className="signin">
+                    <div className="signinWrapper">
+                            <h3 className="signinTitle">
+                                Sign In
+                            </h3>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="input-field">
+                                <label className="labelIn">Email:</label>
+                                <input type="text" id="email" className="signinInput" onChange={this.handleChange}/>
+                            </div>
+                            <div className="input-field">
+                                <label className="labelIn">Password:</label>
+                                <input type="password" id="password" className="signinInput" onChange={this.handleChange}/>
+                            </div>
+                            <button className="buttonSignIn" type="submit">Sign In</button>
+                        </form>
+                        <p className="warningText">{authError ? (authError):(null)}</p>
+                    </div>
+                </div>            
         )
     }
 }
